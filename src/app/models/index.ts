@@ -1,0 +1,1 @@
+export { Catalogo } from './hospital/catalogo';

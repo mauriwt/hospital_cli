@@ -1,0 +1,54 @@
+<div id="content">
+  <div *ngIf="init" class="overlay">
+    <h1>Inserción de datos en proceso...</h1>
+    <p>Puede durar varios minutos, no cierre ni actualize el navegador.</p>
+    <div id="cooking">
+      <div class="gwd-div-rbd8" style="top: 30%;">
+        <img class="gwd-img-logo gwd-gen-1vs0gwdanimation" src="assets/img/yachay_logo.png">
+      </div>
+    </div>
+  </div>
+  <wt-shuyai *ngIf="cargando || conectar"></wt-shuyai>
+  <sa-widgets-grid>
+    <div class="row">
+      <article class="col-xs-12">
+        <sa-widget id="wid-mi-li-0" [editbutton]="false" [colorbutton]="false" [togglebutton]="false" [deletebutton]="false" [fullscreenbutton]="false"
+          [custombutton]="false" [collapsed]="false" [sortable]="false">
+          <header>
+            <h2>
+              <strong>Lista de catalogos</strong>
+            </h2>
+          </header>
+          <div class="widget-body">
+            <div class="text-center">
+              <div class="pull-left header-button">
+                <a class="btn btn-primary" (click)="go()">Nuevo</a>
+              </div>
+              <h3>Catalogos</h3>
+            </div>
+            <div *ngIf="!cargando">
+              <table class="table table-stripped table-hover">
+                <thead>
+                  <tr>
+                    <th class="acciones">Acciones</th>
+                    <th>Dirección IP</th>
+                    <th>Puerto</th>
+                    <th>Nombre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let s of biometricos; let i = index">
+                    <td>
+                      <a placement="top" tooltip="Editar Fila" class="fa fa-pencil fa-lg" (click)="getFila(s.id)"></a>
+                    </td>
+                    <td>{{s.nombre}}</td>
+                    <td>{{s.tipo}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+    </div>
+  </sa-widgets-grid>

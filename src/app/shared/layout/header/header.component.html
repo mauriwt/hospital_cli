@@ -1,0 +1,50 @@
+<header id="header">
+  <div id="logo-group">
+
+    <!-- PLACE YOUR LOGO HERE -->
+    <span id="logo" style="margin-top: 2px;">
+      <img src="assets/img/logo.png" style="height: 45px;width: auto;" alt="Zede"> </span>
+    <!-- END LOGO PLACEHOLDER -->
+
+    <!-- Note: The activity badge color changes when clicked and resets the number to 0
+    Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+    <sa-activities></sa-activities>
+  </div>
+
+  <div class="project-context hidden-xs">
+    <span class="label">SISTEMA:</span>
+    <span class="project-selector">GESTIÓN DE TALENTO HUMANO</span>
+  </div>
+
+
+
+  <!-- pulled right: nav area -->
+  <div class="pull-right">
+
+    <sa-collapse-menu></sa-collapse-menu>
+
+    <!-- logout button -->
+    <fbg-logout></fbg-logout>
+    <!-- end logout button -->
+
+    <!-- search mobile button (this is hidden till mobile view port) -->
+    <div id="search-mobile" class="btn-header transparent pull-right">
+      <span>
+        <a (click)="toggleSearchMobile()" title="Search">
+          <i class="fa fa-search"></i>
+        </a>
+      </span>
+    </div>
+
+    <!-- fullscreen button -->
+    <!-- <sa-full-screen></sa-full-screen> -->
+    <!-- end fullscreen button -->
+
+    <!-- #Voice Command: Start Speech -->
+    <!-- <sa-speech-button></sa-speech-button> -->
+    <!-- end voice command -->
+
+  </div>
+  <!-- end pulled right: nav area -->
+
+</header>

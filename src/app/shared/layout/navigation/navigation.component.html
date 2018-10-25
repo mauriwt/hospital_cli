@@ -1,0 +1,142 @@
+<aside id="left-panel">
+
+    <!-- User info -->
+    <fbg-login-info></fbg-login-info>
+    <!-- end user info -->
+
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+    Please note that these links work a bit different than
+    traditional href="" links. See documentation for details.
+    -->
+
+        <ul saSmartMenu>
+            <li *scopeCheck="['tthh.cargo.get', 'tthh.cargo.getAll'];operator:'OR'" routerLinkActive="active">
+                <a routerLink="/lista" title="Funcionarios">
+                    <i class="fa fa-lg fa-fw fa-home"></i>
+                    <span class="menu-item-parent">{{'Funcionarios'}}</span>
+                </a>
+            </li>
+            <li *scopeCheck="['tthh.cargo.get', 'tthh.cargo.getAll'];operator:'OR'" routerLinkActive="active">
+                <a title="Asistencias">
+                    <i class="fa fa-lg fa-fw fa-check"></i>
+                    <span class="menu-item-parent">{{'Control de personal'}}</span>
+                </a>
+                <ul>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/asistencias/filtro/custom">Control de asistencias</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a (click)="link()">Permisos Masivos</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/asistencias/timbres/rango">Exportar registro</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/vacaciones">Calcular vacaciones</a>
+                    </li>
+                </ul>
+            </li>
+            <li *scopeCheck="['tthh.cargo.get', 'tthh.cargo.getAll'];operator:'OR'" routerLinkActive="active">
+                <a tooltip="Permiso">
+                    <i class="fa fa-lg fa-fw fa-file-text-o"></i>
+                    <span class="menu-item-parent">{{'Permisos'}}</span>
+                </a>
+                <ul>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/permiso">General</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/permiso/lista-director">Directores</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/permiso/lista-tthh">TTHH</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/permiso/jerarquico">Formulario de permisos</a>
+                    </li>
+                </ul>
+            </li>
+            <li *scopeCheck="['tthh.cargo.get', 'tthh.cargo.getAll'];operator:'OR'" routerLinkActive="active">
+                <a title="Configuración">
+                    <i class="fa fa-lg fa-fw fa-cogs"></i>
+                    <span class="menu-item-parent">{{'Configuración'}}</span>
+                </a>
+                <ul>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion">Calendarios</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/horario">Horarios</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/lugares">Lugares</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a title="Horarios Funcionarios">
+                            <span class="menu-item-parent">{{'Horarios Funcionarios'}}</span>
+                        </a>
+                        <ul>
+                            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                <a routerLink="/configuracion/horario/funcionarios">
+                                    Generación masiva
+                                </a>
+                            </li>
+                            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                <a routerLink="/configuracion/cambiar/dias">
+                                    Modificar días laborables
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/tipo-permiso">Tipos de Permiso</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/tipo-aprobacion">Tipos de Aprobación</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/nivel-aprobacion">Niveles de Aprobación</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/tiempo-gracia">Minutos de Gracia</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/configuracion/parametros">Parámetros</a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li  routerLinkActive="active">
+                <a title="Biométricos">
+                    <i class="fa fa-lg fa-fw fa-desktop"></i>
+                    <span class="menu-item-parent">{{'Gestión de biométricos'}}</span>
+                </a>
+                <ul>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/biometrico">Lista de biométricos</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a routerLink="/biometrico/clonar">Clonación parcial de datos </a>
+                    </li>
+                </ul>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/gestion" title="Gestion">
+                    <i class="fa fa-lg fa-fw fa-cube"></i>
+                    <span class="menu-item-parent">{{'Empresa'}}</span>
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/reporte" title="Reporte">
+                    <i class="fa fa-lg fa-fw fa-file-archive-o"></i>
+                    <span class="menu-item-parent">{{'Reporte'}}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <sa-minify-menu></sa-minify-menu>
+
+</aside>
