@@ -17,7 +17,7 @@ pipeline {
 
         stage('Front-End Unit Test') {
           steps {
-            sh 'cd hospital_cli && npm i && npm run test:unit'
+            sh 'npm i && npm run test:unit'
           }
         }
 
